@@ -50,17 +50,11 @@ let deck = axios.get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_coun
             }
         
         })
-        .catch(e => {
-            console.error(e);
-        })
 //Q3
         $("#drawCard").on("click", () =>{
             axios.get(`https://deckofcardsapi.com/api/deck/${d.data.deck_id}/draw/?count=1`)
             .then( c => {
                 $("#placeCard").append(`<img src="${c.data.cards[0].image}"/>`)
-            })
-            .catch(e => {
-                console.error(e);
             })
         })
 
